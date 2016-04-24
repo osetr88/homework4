@@ -1,8 +1,7 @@
 package com.sautin.main;
 
+import com.sautin.face.IInvertInterface;
 import com.sautin.inversion.Inversion;
-
-import java.util.ArrayList;
 
 /**
  * Main class
@@ -15,19 +14,11 @@ public class Main {
      */
     public static void main(String[] args) {
 
-        ArrayList<Integer> intArray = new ArrayList<Integer>();
-        for (int i = 0; i < 5; i++) {
-            intArray.add(i + 1);
-        }
+        Integer[] intArray = {1, 2, 3, 4, 5};
+        String[] stringArray = {"A", "B", "C", "D", "E"};
 
-        ArrayList<String> stringArray = new ArrayList<String>();
-        stringArray.add("A");
-        stringArray.add("B");
-        stringArray.add("C");
-        stringArray.add("D");
-        stringArray.add("E");
+        IInvertInterface inversion = new Inversion();
 
-        Inversion inversion = new Inversion();
         try {
             System.out.println("Int Array: ");
             for (int i : intArray) {
