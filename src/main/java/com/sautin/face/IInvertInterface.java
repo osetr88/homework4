@@ -8,7 +8,6 @@ public interface IInvertInterface {
      * invert array
      * @param <T> type of array
      * @param array array of any type
-     * @return inverted array of any type
      */
-    <T> T[] invert (T[] array);
+    <T> void invert (T[] array);
 }

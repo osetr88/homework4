@@ -21,25 +21,35 @@ public class InversionTest {
     @Test
     public void testIntInvert() {
         Integer[] original = {1, 2, 3};
-        Integer[] inverted = this.inversionTest.invert(original);
-        assertArrayEquals(new Integer[] {3, 2, 1}, inverted);
+        this.inversionTest.invert(original);
+        assertArrayEquals(new Integer[] {3, 2, 1}, original);
     }
 
     @Test
     public void testStringInvert() {
         String[] original = {"AAA", "BBB", "CCC"};
-        String[] inverted = this.inversionTest.invert(original);
-        assertArrayEquals(new String[] {"CCC", "BBB", "AAA"}, inverted);
+        this.inversionTest.invert(original);
+        assertArrayEquals(new String[] {"CCC", "BBB", "AAA"}, original);
     }
 
     @Test
     public void testDoubleInvert() {
         Double[] original = {1.2, 2.2, 3.456};
-        Double[] inverted = this.inversionTest.invert(original);
-        assertArrayEquals(new Double[] {3.456, 2.2, 1.2}, inverted);
+        this.inversionTest.invert(original);
+        assertArrayEquals(new Double[] {3.456, 2.2, 1.2}, original);
     }
 
+    @Test(expected = NullPointerException.class)
+    public void testNullInvert() {
+        this.inversionTest.invert(null);
+        fail();
+    }
 
-
+    @Test
+    public void testOneInvert() {
+        Double[] original = {1.2};
+        this.inversionTest.invert(original);
+        assertArrayEquals(new Double[] {1.2}, original);
+    }
 
 }
